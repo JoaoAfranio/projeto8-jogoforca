@@ -1,0 +1,86 @@
+.app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.game {
+    width: 800px;
+
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 30px;
+}
+
+
+.game img {
+    width: 400px;
+}
+
+.game button {
+    width: 150px;
+    height: 40px;
+
+    color: white;
+    background-color: #27ae60;
+
+    border-radius: 5px;
+    border: none;
+
+    margin-top: 30px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.letters {
+    width: 580px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px;
+
+    margin-top: 30px;
+}
+
+.letters button{
+    width: 40px;
+    height: 40px;
+
+    background-color: #9faab5;
+    color:#7f8084;
+
+    border: none;
+    border-radius: 3px;
+}
+
+.guess {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 30px;
+}
+
+.guess input {
+    width: 50%;
+    height: 30px;
+
+    border-radius: 3px;
+    outline: none;
+}
+
+.guess button {
+    height: 40px;
+    width: 15%;
+
+    background-color: #e1ecf4;
+    color: #4c7298;
+
+    border-color: #4c7298;
+    border-radius: 3px;
+}
