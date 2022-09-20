@@ -62,12 +62,29 @@
     width: 40px;
     height: 40px;
 
-    background-color: #9faab5;
-    color:#7f8084;
-
     border: none;
     border-radius: 3px;
+
+    cursor: pointer;
 }
+
+.letters button.disabled {
+    background-color: #9faab5;
+    color:#7f8084;
+    cursor: default;
+}
+
+.letters button.enabled {
+    background-color: #bddfef;
+    color: #3078a7;
+}
+
+.letters button.enabled:hover {
+    background-color: #4bb7e9;
+    color: #ffffff;
+}
+
+
 
 .guess {
     width: 550px;
@@ -95,4 +112,14 @@
 
     border-color: #4c7298;
     border-radius: 3px;
+}
+
+.defeat {
+    color: red;
+    letter-spacing: normal;
+}
+
+.win {
+    color: green;
+    letter-spacing: normal;
 }
