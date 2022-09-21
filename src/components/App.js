@@ -112,10 +112,10 @@ export default function App(){
         return alphabet.map((letter, index) => 
             {
                 return  (!letterState) ? 
-                <button key={index} disabled className="disabled">{letter.toUpperCase()}</button> : 
+                <button  key={index} disabled className="disabled" data-identifier="letter"> {letter.toUpperCase()}</button> : 
                 guessedLetters.indexOf(letter) === -1 ?
-                <button key={index} onClick={() => {guessLetter(letter)}} className="enabled">{letter.toUpperCase()}</button> :
-                <button key={index} disabled className="disabled">{letter.toUpperCase()}</button>
+                <button key={index} onClick={() => {guessLetter(letter)}} className="enabled" data-identifier="letter">{letter.toUpperCase()}</button> :
+                <button key={index} disabled className="disabled" data-identifier="letter">{letter.toUpperCase()}</button>
             })
     }
 
@@ -140,9 +140,9 @@ export default function App(){
     return(
         <div className="app">
             <div className="game">
-                <img src={imagesHangman[hangmanImg]} alt="hangman"/>
-                <button onClick={selectWord}>Escolher Palavra</button>
-                <p>
+                <img data-identifier="game-image" src={imagesHangman[hangmanImg]} alt="hangman"/>
+                <button data-identifier="choose-word" onClick={selectWord}>Escolher Palavra</button>
+                <p data-identifier="word">
                     {renderWord()}
                 </p>
             </div>
@@ -151,8 +151,8 @@ export default function App(){
             </div>
             <div className="guess">
                 <p>Já sei a palavra!</p>
-                <input value={guessInput} onChange={((e) => {setGuessInput(e.target.value)})} />
-                <button onClick={() => {guessWord(guessInput)}}>Chutar</button>
+                <input data-identifier="type-guess" value={guessInput} onChange={((e) => {setGuessInput(e.target.value)})} />
+                <button data-identifier="guess-button" onClick={() => {guessWord(guessInput)}}>Chutar</button>
             </div>
         </div>
     );
