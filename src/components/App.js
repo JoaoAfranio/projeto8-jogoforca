@@ -50,12 +50,45 @@ export default function App(){
     }
 
     function guessLetter(letter) {
-        if(splitedWord.indexOf(letter) === -1){
-            setHangmanImg(hangmanImg + 1);
-            setError(error + 1);
+        letter = specialChar(letter);
+
+        if(letter.length > 1){
+            const positionLetters = letter.map((l) => {
+                return splitedWord.indexOf(l);
+            });
+            
+            const hasLetter = positionLetters.filter((l) => l >= 0 ? true : false);
+
+            if(hasLetter.length === 0){
+                setHangmanImg(hangmanImg + 1);
+                setError(error + 1);
+            }
+        } else {
+            if(splitedWord.indexOf(letter) === -1){
+                setHangmanImg(hangmanImg + 1);
+                setError(error + 1);
+            }
         }
 
-        error >= 5 ? setLetterState(false) : setGuessedLetters(arrayGuessed => [...arrayGuessed, letter]);
+        
+        error >= 5 ? setLetterState(false) : setGuessedLetters(arrayGuessed => [...arrayGuessed, ...letter]);
+    }
+
+    function specialChar(letter) {
+        switch (letter){
+            case "a" :
+                return ["a","á","ã"];
+            case "e" :
+                return ["e","é","ê"];
+            case "i" :
+                return ["i","í"];
+            case "o" :
+                return ["o","ó", "ô"];
+            case "u" :
+                return ["u","ú"];
+            default: 
+                return letter;
+        }
     }
 
     function renderWord() {
