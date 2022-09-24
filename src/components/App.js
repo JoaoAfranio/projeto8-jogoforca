@@ -79,8 +79,6 @@ export default function App() {
     setError(0);
     setVictory();
     setGuessInput("");
-
-    console.log(word);
   }
 
   function guessLetter(letter) {
